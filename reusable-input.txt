@@ -1,0 +1,37 @@
+onChange - the callback function to register on UI change
+onTouch - the callback function to register on element touch
+set value(val: any) - sets the value used by the ngModel of the element
+writeValue(obj: any) - This will write the value to the view if the value changes occur on the model programmatically
+registerOnChange(fn: any) - When the value in the UI is changed, this method will invoke a callback function
+registerOnTouch(fn: any) - When the element is touched, this method will get called
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+
+
+control-value-accessor-connector
+
+//---------------------------------------------------------------------
+
+
+- [validotors.ts](https://gist.github.com/nicobytes/ac935c38f397670be4cb25613a0d9381) 
+
+
+
+
+
+
+//--------------------------------------------------------------------- 
+
+
+- [validotors.ts](https://gist.github.com/nicobytes/ac935c38f397670be4cb25613a0d9381) 
+
+
+
+
+
+
+//--------------------------------------------------------------------- 

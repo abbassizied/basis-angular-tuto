@@ -1,0 +1,63 @@
+  "refreshTokenList": [
+    {
+      "id": 0,
+      "value": "9986f682-6878-40c8-b567-572fcd9add32",
+      "userId": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "bruno@email.com",
+      "firstName": "Bruno",
+      "lastName": "Doe",
+      "username": "bruno",
+      "password": "rGuENtryPTiS",
+      "role": "User"
+    },
+    {
+      "id": 2,
+      "email": "ali@email.com",
+      "firstName": "Ali",
+      "lastName": "Ben Ali",
+      "username": "Aladin",
+      "password": "RPTisHkOdENE",
+      "role": "User"
+    },
+    {
+      "id": 3,
+      "email": "nilson@email.com",
+      "firstName": "Nilson",
+      "lastName": "Berg",
+      "username": "nilson",
+      "password": "HaIrELUXtuBe",
+      "role": "User"
+    },
+    {
+      "id": 4,
+      "email": "david@email.com",
+      "firstName": "David",
+      "lastName": "Awaz",
+      "username": "david",
+      "password": "lEsIlicTuNth",
+      "role": "User"
+    },
+    {
+      "id": 5,
+      "email": "abbassi@email.com",
+      "firstName": "Abbassi",
+      "lastName": "Zied",
+      "username": "Zizou87",
+      "password": "my-super-secret-password",
+      "role": "Admin"
+    },
+    {
+      "id": 6,
+      "email": "midou@email.com",
+      "firstName": "Abbassi",
+      "lastName": "Mohamed",
+      "username": "Midou",
+      "password": "mido-likes-spicy-chicken",
+      "role": "User"
+    }
+  ],
