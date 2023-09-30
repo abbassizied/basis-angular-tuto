@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bulma/css/bulma.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+footer {
+  margin-top: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

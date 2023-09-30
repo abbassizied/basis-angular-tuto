@@ -1,0 +1,198 @@
+<div class="column">
+  <div class="center">
+    <h1 class="title">Register</h1>
+  </div>
+  <hr />
+
+  <form
+    [formGroup]="registerForm"
+    class="box"
+    style="width: 80%"
+    (ngSubmit)="registerUser()"
+  >
+    <div *ngIf="!hide">
+      <alert [alert]="alert" [isVisible]="!hide" (click)="close()"></alert>
+    </div>
+
+    <div class="field">
+      <label class="label">First Name</label>
+      <div class="control">
+        <input
+          formControlName="firstName"
+          id="firstName"
+          type="text"
+          class="input"
+        />
+      </div>
+
+      <div
+        *ngIf="
+          validateControl['firstName'].touched &&
+          validateControl['firstName'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['firstName'].errors &&
+            validateControl['firstName'].errors['required']
+          "
+        >
+          firstName is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Last Name</label>
+      <div class="control">
+        <input
+          formControlName="lastName"
+          id="lastName"
+          type="text"
+          class="input"
+        />
+      </div>
+      <div
+        *ngIf="
+          validateControl['lastName'].touched &&
+          validateControl['lastName'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['lastName'].errors &&
+            validateControl['lastName'].errors['required']
+          "
+        >
+          lastName is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">User Name: </label>
+      <div class="control">
+        <input
+          formControlName="username"
+          id="username"
+          type="text"
+          class="input"
+        />
+      </div>
+      <div
+        *ngIf="
+          validateControl['username'].touched &&
+          validateControl['username'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['username'].errors &&
+            validateControl['username'].errors['required']
+          "
+        >
+          username is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email: </label>
+      <p class="control has-icons-left">
+        <input formControlName="email" id="email" type="email" class="input" />
+        <span class="icon is-left">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </span>
+      </p>
+      <div
+        *ngIf="
+          validateControl['email'].touched && validateControl['email'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['email'].errors &&
+            validateControl['email'].errors['required']
+          "
+        >
+          email is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password: </label>
+      <p class="control has-icons-left">
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          class="input"
+        />
+        <span class="icon is-left">
+          <fa-icon [icon]="faLock"></fa-icon>
+        </span>
+      </p>
+      <div
+        *ngIf="
+          validateControl['password'].touched &&
+          validateControl['password'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['password'].errors &&
+            validateControl['password'].errors['required']
+          "
+        >
+          password is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Role: </label>
+      <!--Using items input-->
+      <ng-select
+        [items]="roles"
+        bindLabel="name"
+        bindValue="value"
+        [multiple]="true"
+        placeholder="Select at least one role"
+        clearAllText="Clear"
+        formControlName="role"
+      >
+      </ng-select>
+      <div
+        *ngIf="
+          validateControl['role'].touched && validateControl['role'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['role'].errors &&
+            validateControl['role'].errors['required']
+          "
+        >
+          role is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <button
+        type="submit"
+        class="button is-primary is-outlined"
+        [disabled]="!registerForm.valid"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+</div>

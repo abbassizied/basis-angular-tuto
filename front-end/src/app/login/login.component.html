@@ -1,0 +1,82 @@
+<div class="column">
+  <h1 class="title">Login</h1>
+  <hr />
+
+  <form
+    name="form"
+    [formGroup]="loginForm"
+    class="box"
+    style="width: 80%"
+    (ngSubmit)="loginUser()"
+  >
+    <div *ngIf="!hide">
+      <alert [alert]="alert" [isVisible]="!hide" (click)="close()"></alert>
+    </div>
+
+    <div class="field">
+      <label class="label">Email: </label>
+      <p class="control has-icons-left">
+        <input formControlName="email" id="email" type="email" class="input" />
+        <span class="icon is-left">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </span>
+      </p>
+      <div
+        *ngIf="
+          validateControl['email'].touched && validateControl['email'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['email'].errors &&
+            validateControl['email'].errors['required']
+          "
+        >
+          email is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password: </label>
+      <p class="control has-icons-left">
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          class="input"
+        />
+        <span class="icon is-left">
+          <fa-icon [icon]="faLock"></fa-icon>
+        </span>
+      </p>
+      <div
+        *ngIf="
+          validateControl['password'].touched &&
+          validateControl['password'].invalid
+        "
+        class="help is-danger"
+      >
+        <div
+          *ngIf="
+            validateControl['password'].errors &&
+            validateControl['password'].errors['required']
+          "
+        >
+          password is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <button
+        type="submit"
+        class="button is-primary is-outlined"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>

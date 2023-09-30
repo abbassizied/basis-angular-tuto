@@ -1,0 +1,4 @@
+<div class="{{ alert.type }}" [ngClass]="{ 'is-hidden': !isVisible }">
+  <button class="delete" (click)="dismiss()"></button>
+  {{ alert.message }}
+</div>

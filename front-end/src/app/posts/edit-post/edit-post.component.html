@@ -1,0 +1,60 @@
+<div class="column">
+  <h1 class="title">Edit Post Page</h1>
+  <h2 class="subtitle">Reactive Forms</h2>
+  <hr />
+  <button class="button is-black" (click)="goBackToPrevPage()">Back</button>
+  <hr />
+
+  <div *ngIf="post">
+    <!-- your form goes here -->
+    <form [formGroup]="postForm" (ngSubmit)="submit()">
+      <div class="field">
+        <label for="title">Title:</label>
+        <input
+          formControlName="title"
+          id="title"
+          type="text"
+          class="input"
+        />
+        <div
+          *ngIf="f['title'].touched && f['title'].invalid"
+          class="help is-danger"
+        >
+          <div *ngIf="f['title'].errors && f['title'].errors['required']">
+            Title is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="body">Body</label>
+        <textarea
+          class="textarea"
+          formControlName="body"
+          id="body"
+          type="text"
+        >
+        </textarea>
+        <div
+          *ngIf="f['body'].touched && f['body'].invalid"
+          class="help is-danger"
+        >
+          <div *ngIf="f['body'].errors && f['body'].errors['required']">
+            Body is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <button
+          type="submit"
+          class="button is-primary is-outlined"
+          [disabled]="!postForm.valid"
+        >
+        Update
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

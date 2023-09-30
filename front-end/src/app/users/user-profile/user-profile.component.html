@@ -1,0 +1,10 @@
+<h2>User Profile</h2>
+<div *ngIf="currentUser">
+  <p><strong>Id:</strong> {{ currentUser.id }}</p>
+  <p><strong>FirstName:</strong> {{ currentUser.firstName }}</p>
+  <p><strong>LastName:</strong> {{ currentUser.lastName }}</p>
+  <p><strong>Email:</strong> {{ currentUser.email }}</p>
+  <p><strong>Username:</strong> {{ currentUser.username }}</p>
+  <p><strong>Password:</strong> {{ currentUser.password }}</p>
+  <p><strong>Role:</strong> {{ currentUser.role }}</p>
+</div>

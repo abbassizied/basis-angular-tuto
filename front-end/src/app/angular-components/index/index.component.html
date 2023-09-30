@@ -1,0 +1,51 @@
+<h1 class="block">Angular components</h1>
+<!-- _________________________________________________________________________ -->
+<div class="block">
+  <div>{{ counter }}</div>
+  <div class="buttons">
+    <button class="block button is-success" (click)="inc()">
+      increment from parent
+    </button>
+    <button class="block button is-danger" (click)="dec()">
+      decrement from parent
+    </button>
+  </div>
+  <div class="block"><app-counter [(counter)]="counter"></app-counter></div>
+
+  <div class="block">
+    <app-counter [counter]="counter" (counterChange)="counter = $event"></app-counter>
+  </div>
+
+  <div class="block">
+    <app-counter [counter]="counter" (counterChange)="onCounterChange($event)">
+    </app-counter>
+  </div>
+</div>
+<!-- _________________________________________________________________________ -->
+<div class="block box">
+  <p class="block">
+    Voici un exemple complet et concret de l'utilisation de @ViewChild dans un
+    composant Angular
+  </p>
+  <input class="block input" type="text" #myInput />
+  <button class="block button is-primary" (click)="changeValue()">
+    Modifier la valeur de l'input
+  </button>
+  <p class="block">
+    Dans cet exemple, lorsque vous cliquerez sur le bouton, la valeur de l'input
+    sera modifiée en "Nouvelle valeur".
+  </p>
+</div>
+<!-- _________________________________________________________________________ -->
+<div class="box">
+  <p>Comment utiliser @ViewChildren sur Angular ?</p>
+  <div #child1>red</div>
+  <div #child2>blue</div>
+  <div class="buttons">
+    <button class="block button is-primary" (click)="getChildOneValue()">Get Child One Value</button>
+    <button class="block button is-danger" (click)="clearChildOneValue()">Clear Child One Value</button>
+  </div>
+  <p> child1 Value : {{child1Value}}</p>
+</div>
+<!-- _________________________________________________________________________ -->
+<router-outlet></router-outlet>

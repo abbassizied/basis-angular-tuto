@@ -1,0 +1,64 @@
+<div class="is-size-3 block">
+  <h1>Posts'List</h1>
+</div>
+
+<div class="block">
+  <a
+    class="button is-success is-light is-rounded"
+    [routerLink]="['post', 'add']"
+  >
+    Add
+  </a>
+</div>
+
+<hr />
+
+<div class="block">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="Id">Id</abbr></th>
+        <th><abbr title="Title">Title</abbr></th>
+        <th><abbr title="Body">Body</abbr></th>
+        <th><abbr title="Actions">Actions</abbr></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th><abbr title="Id">Id</abbr></th>
+        <th><abbr title="Title">Title</abbr></th>
+        <th><abbr title="Body">Body</abbr></th>
+        <th><abbr title="Actions">Actions</abbr></th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <a
+            class="button is-info is-light is-rounded"
+            [routerLink]="['post', post.id, 'view']"
+          >
+            View
+          </a>
+          <a
+            class="button is-primary is-light is-rounded"
+            [routerLink]="['post', post.id, 'edit']"
+            >Edit</a
+          >
+          <button
+            type="button"
+            (click)="deletePost(post.id)"
+            class="button is-danger is-light is-rounded"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
